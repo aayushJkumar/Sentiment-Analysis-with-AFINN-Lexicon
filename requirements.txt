@@ -1,0 +1,9 @@
+streamlit==1.7.0
+streamlit_webrtc==0.22.1
+pyngrok
+unicode
+contractions==0.1.72
+spacy==3.4.2
+advertools==0.13.2
+afinn==0.1
+unicode

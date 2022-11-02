@@ -7,9 +7,9 @@ import spacy
 import numpy as np
 import pandas as pd
 import requests
-from emot.emo_unicode import UNICODE_EMOJI, EMOTICONS_EMO
+# from emot.emo_unicode import UNICODE_EMOJI, EMOTICONS_EMO
 # from emot.emo_unicode import UNICODE_EMO, EMOTICONS
-import emoji
+# import emoji
 import re
 import csv
 # import sys
@@ -18,10 +18,10 @@ nltk.download('punkt')
 import os
 import advertools as adv
 
-try:
-    import cPickle as pickle
-except ImportError:
-    import pickle  
+# try:
+#     import cPickle as pickle
+# except ImportError:
+#     import pickle  
 
 # os.environ['EAI_USERNAME'] = 'w.smith78945@gmail.com' #username
 # os.environ['EAI_PASSWORD'] = 'Wsmith#789' #password
@@ -36,9 +36,9 @@ tokenizer = ToktokTokenizer()
 stopword_list = nltk.corpus.stopwords.words('english')
 stopword_list.remove('no')
 stopword_list.remove('not')
-with open('Emoji_Dict.p', 'rb') as fp:
-    Emoji_Dict = pickle.load(fp)
-Emoji_Dict = {v: k for k, v in Emoji_Dict.items()}
+# with open('Emoji_Dict.p', 'rb') as fp:
+#     Emoji_Dict = pickle.load(fp)
+# Emoji_Dict = {v: k for k, v in Emoji_Dict.items()}
 # @st.cache
 def calculate_sentiment(text):
     # output = client.specific_resource_analysis(
