@@ -196,6 +196,7 @@ def normalize_corpus(text, html_stripping=True, contraction_expansion=True,
         text = text.lower()
     # remove extra newlines
     text = re.sub(r'[\r|\n|\r\n]+', ' ', text)
+    # text = unicode(text, errors='ignore')
     # lemmatize text
     if text_lemmatization:
         text = lemmatize_text(text)
@@ -216,7 +217,7 @@ def normalize_corpus(text, html_stripping=True, contraction_expansion=True,
 
 # @st.cache
 def file_input(path,col):
-    df = pd.read_csv(path)
+    df = pd.read_csv(path,encoding='cp1252')
     # df1=df.copy()
     colnames=df.columns
     df=df[[colnames[0],colnames[col]]]
@@ -248,7 +249,7 @@ def file_input(path,col):
 # @st.cache
 def txt_to_csv(path,name) :
     header_list = ["text"]
-    df = pd.read_csv(path,delimiter='\n',names=header_list)
+    df = pd.read_csv(path,delimiter='\n',names=header_list,encoding='cp1252')
     df['doc'] = range(1, len(df) + 1)
     df = df[['doc','text']]
     df.to_csv('{0}.csv'.format(name), index=None)
